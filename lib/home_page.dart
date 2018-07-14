@@ -1,8 +1,5 @@
-import 'dart:async';
-
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
 
 class HomePage extends StatefulWidget {
   final List _currencies;
@@ -21,6 +18,7 @@ class _HomePageState extends State<HomePage> {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text("Crypto App"),
+        elevation: defaultTargetPlatform == TargetPlatform.iOS ? 0.5 : 0.0,
       ),
       body: _cryptoWidget(),
     );
@@ -39,8 +37,7 @@ class _HomePageState extends State<HomePage> {
 
               return _getListItemUI(currency, color);
             },
-          )
-          )
+          ))
         ],
       ),
     );
