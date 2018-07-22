@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class HomePage extends StatefulWidget {
   final List _currencies;
 
-  HomePage(this._currencies);
+  HomePage();
 
   @override
   _HomePageState createState() => _HomePageState();
