@@ -1,6 +1,6 @@
 import 'package:crypto_app/DependencyInjection.dart';
 import 'package:crypto_app/data/model/CryptoCurrency.dart';
-import 'package:crypto_app/data/repositories/CryptoRepository.dart';
+import 'package:crypto_app/data/repositories/ICryptoRepository.dart';
 
 abstract class CryptoListViewContract {
   void onLoadCryptoDownloadComplete(List<CryptoCurrency> currencies);
@@ -10,7 +10,7 @@ abstract class CryptoListViewContract {
 
 class CryptoListPresenter {
   CryptoListViewContract _view;
-  CryptoRepository _repository;
+  ICryptoRepository _repository;
 
   CryptoListPresenter(this._view) {
     _repository = new Injector().cryptoRepository;
